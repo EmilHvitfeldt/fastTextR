@@ -1,0 +1,6 @@
+src/main.cc
+work
+auxiliary
+^.*\.Rproj$
+^\.Rproj\.user$
+^cran-comments\.md$
