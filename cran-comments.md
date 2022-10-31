@@ -1,13 +1,6 @@
 ## Release Summary
 
-This release includes updated C++ source code and a change of maintainer from Florian Schwendinger to Emil Hvitfeldt.
-
-* correctly specified license as: BSD_3_clause + file LICENSE
-
-## Test environments
-* local R installation, R 4.0.2
-* ubuntu 16.04 (on travis-ci), R 4.0.2
-* win-builder (devel)
+Fixed Wbitwise-instead-of-logical issue.
 
 ## R CMD check results
 
@@ -15,4 +8,4 @@ This release includes updated C++ source code and a change of maintainer from Fl
 
 ## Downstream dependencies
 
-There are no downstream dependencies to be checked.
+There are 2 downstream dependencies to be checked. No issues.
