@@ -47,7 +47,7 @@ ft_word_vectors(model, c("asparagus", "pidgey", "yellow"))[,1:5]
 ## Printing sentence vectors
 
 ```{r, eval=FALSE}
-ft_word_vectors(model, c("Poets have been mysteriously silent on the subject of cheese"))[,1:5]
+ft_sentence_vectors(model, c("Poets have been mysteriously silent on the subject of cheese"))[,1:5]
 ```
 
 ```
