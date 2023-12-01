@@ -16,6 +16,7 @@ export(ft_test)
 
 export(ft_words)
 export(ft_word_vectors)
+export(ft_sentence_vectors)
 export(ft_nearest_neighbors)
 export(ft_analogies)
 

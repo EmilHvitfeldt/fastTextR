@@ -61,6 +61,10 @@ Rft_word_vectors <- function(ft, words) {
     .Call(`_fastTextR_Rft_word_vectors`, ft, words)
 }
 
+Rft_sentence_vectors <- function(ft, sentences) {
+    .Call(`_fastTextR_Rft_sentence_vectors`, ft, sentences)
+}
+
 Rft_nearest_neighbors <- function(ft, word, k = 10L) {
     .Call(`_fastTextR_Rft_nearest_neighbors`, ft, word, k)
 }

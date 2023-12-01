@@ -14,7 +14,7 @@ ft_train(
 \arguments{
 \item{file}{a character string giving the location of the input file.}
 
-\item{method}{a character string giving the method, possible values are 
+\item{method}{a character string giving the method, possible values are
 \code{'supervised'}, \code{'cbow'} and \code{'skipgram'}.}
 
 \item{control}{a list giving the control variables, for more information
@@ -23,7 +23,7 @@ see \code{\link{ft_control}}.}
 \item{...}{additional control arguments inserted into the control list.}
 }
 \description{
-Train a new word representation model or supervised 
+Train a new word representation model or supervised
              classification model.
 }
 \examples{
