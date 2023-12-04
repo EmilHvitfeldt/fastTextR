@@ -9,7 +9,7 @@ ft_sentence_vectors(model, sentences)
 \arguments{
 \item{model}{an object inheriting from \code{"fasttext"}.}
 
-\item{words}{a character vector giving the sentences.}
+\item{sentences}{a character vector giving the sentences.}
 }
 \value{
 a matrix containing the sentence vectors.

@@ -373,7 +373,7 @@ ft_word_vectors <- function(model, words) {
 #' @title Get Sentence Vectors
 #' @description Obtain sentence vectors from a previously trained model.
 #' @param model an object inheriting from \code{"fasttext"}.
-#' @param words a character vector giving the sentences.
+#' @param sentences a character vector giving the sentences.
 #' @return a matrix containing the sentence vectors.
 #' @examples
 #' \dontrun{
