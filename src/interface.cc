@@ -254,7 +254,7 @@ Rcpp::List Rft_sentence_vectors(SEXP ft, std::vector<std::string> sentences) {
     for (int32_t i = 0; i < sentences.size(); i++) {
         // create a std::istringstream object from sentences[i]
         std::istringstream iss(sentences[i]);
-        fast_text->getSentenceVector(iss, vec); // vec is set to 0 in getWordVector
+        fast_text->getSentenceVector(iss, vec);
         retval[i] = std::vector<float>(vec.data(), vec.data() + vec.size());
     }
 
