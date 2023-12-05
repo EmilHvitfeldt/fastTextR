@@ -44,6 +44,16 @@ ft_word_vectors(model, c("asparagus", "pidgey", "yellow"))[,1:5]
 ## yellow    0.0007776691 -0.0001886144  0.001824494 0.03869999  0.036413591
 ```
 
+## Printing sentence vectors
+
+```{r, eval=FALSE}
+ft_sentence_vectors(model, c("Poets have been mysteriously silent on the subject of cheese", "Who did not let the gorilla into the ballet"))[,1:5]
+```
+
+```
+???
+```
+
 ## Nearest neighbor queries
 
 ```{r, eval=FALSE}

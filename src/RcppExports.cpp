@@ -184,6 +184,18 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// Rft_sentence_vectors
+Rcpp::List Rft_sentence_vectors(SEXP ft, std::vector<std::string> sentences);
+RcppExport SEXP _fastTextR_Rft_sentence_vectors(SEXP ftSEXP, SEXP sentencesSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< SEXP >::type ft(ftSEXP);
+    Rcpp::traits::input_parameter< std::vector<std::string> >::type sentences(sentencesSEXP);
+    rcpp_result_gen = Rcpp::wrap(Rft_sentence_vectors(ft, sentences));
+    return rcpp_result_gen;
+END_RCPP
+}
 // Rft_nearest_neighbors
 Rcpp::NumericVector Rft_nearest_neighbors(SEXP ft, const std::string& word, int32_t k);
 RcppExport SEXP _fastTextR_Rft_nearest_neighbors(SEXP ftSEXP, SEXP wordSEXP, SEXP kSEXP) {
@@ -229,6 +241,7 @@ static const R_CallMethodDef CallEntries[] = {
     {"_fastTextR_Rft_test", (DL_FUNC) &_fastTextR_Rft_test, 4},
     {"_fastTextR_Rft_all_words", (DL_FUNC) &_fastTextR_Rft_all_words, 1},
     {"_fastTextR_Rft_word_vectors", (DL_FUNC) &_fastTextR_Rft_word_vectors, 2},
+    {"_fastTextR_Rft_sentence_vectors", (DL_FUNC) &_fastTextR_Rft_sentence_vectors, 2},
     {"_fastTextR_Rft_nearest_neighbors", (DL_FUNC) &_fastTextR_Rft_nearest_neighbors, 3},
     {"_fastTextR_Rft_analogies", (DL_FUNC) &_fastTextR_Rft_analogies, 5},
     {NULL, NULL, 0}

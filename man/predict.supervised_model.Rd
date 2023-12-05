@@ -26,21 +26,21 @@ on the probabilities. Predictions with probabilities
 below this lower bound are not returned. The default
 is \code{0} which means all predictions are returned.}
 
-\item{rval}{a character string controlling the return value, allowed 
+\item{rval}{a character string controlling the return value, allowed
 values are \code{"sparse"}, \code{"dense"} and \code{"slam"}.
 The default is sparse, here the values are returned as a \code{data.frame}
 in a format similar to a simple triplet matrix (sometimes refereed to as the
 coordinate format). If \code{rval} is set to \code{"dense"}, a matrix
-of the probabilities is returned. Similarly if \code{rval} is set to 
-\code{"slam"}, a matrix in the simple triplet sparse format from the 
+of the probabilities is returned. Similarly if \code{rval} is set to
+\code{"slam"}, a matrix in the simple triplet sparse format from the
 \pkg{slam} package is returned.}
 
 \item{...}{currently not used.}
 }
 \value{
-\code{NULL} if a \code{'result_file'} is given otherwise 
-        if \code{'prob'} is true a \code{data.frame} with the predicted labels 
-        and the corresponding probabilities, if \code{'prob'} is false a 
+\code{NULL} if a \code{'result_file'} is given otherwise
+        if \code{'prob'} is true a \code{data.frame} with the predicted labels
+        and the corresponding probabilities, if \code{'prob'} is false a
         character vector with the predicted labels.
 }
 \description{

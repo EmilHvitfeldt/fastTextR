@@ -4,7 +4,7 @@
 #include "interface.h"
 
 
-namespace fasttext { 
+namespace fasttext {
 
 void Args::init_from_list(Rcpp::List control) {
     std::string method = control["method"];
@@ -22,7 +22,7 @@ void Args::init_from_list(Rcpp::List control) {
     } else {
         Rcpp::stop("unkown method!");
     }
-    
+
     std::string xloss = control["loss"];
     if ( xloss == "softmax" ) {
         loss = loss_name::softmax;
@@ -37,7 +37,7 @@ void Args::init_from_list(Rcpp::List control) {
     input             = Rcpp::as<std::string>( control["input"] );
     // test              = Rcpp::as<std::string>( control["test"] );
     output            = Rcpp::as<std::string>( control["output"] );
-    lr                = control["learning_rate"];    
+    lr                = control["learning_rate"];
     lrUpdateRate      = control["learn_update"];
     dim               = control["word_vec_size"];
     ws                = control["window_size"];
@@ -45,7 +45,7 @@ void Args::init_from_list(Rcpp::List control) {
     minCount          = control["min_count"];
     minCountLabel     = control["min_count_label"];
     neg               = control["neg"];
-    wordNgrams        = control["max_len_ngram"];        
+    wordNgrams        = control["max_len_ngram"];
     bucket            = control["nbuckets"];
     minn              = control["min_ngram"];
     maxn              = control["max_ngram"];
@@ -206,9 +206,9 @@ SEXP Rft_test(SEXP ft, std::string file_name, int32_t k, float threshold) {
     std::ifstream infile(file_name);
     fasttext::Meter meter(false);
     fast_text->test(infile, k, threshold, meter);
-    
-    return List::create(_["nexamples"] =(double)meter.nexamples(), 
-                        _["precision"] = meter.precision(), 
+
+    return List::create(_["nexamples"] =(double)meter.nexamples(),
+                        _["precision"] = meter.precision(),
                         _["recall"] = meter.recall());
 }
 
@@ -245,10 +245,29 @@ Rcpp::List Rft_word_vectors(SEXP ft, std::vector<std::string> words) {
 
 
 // [[Rcpp::export]]
+Rcpp::List Rft_sentence_vectors(SEXP ft, std::vector<std::string> sentences) {
+    Rcpp::XPtr<FastText>fast_text(ft);
+
+    fasttext::Vector vec(fast_text->getDimension());
+    Rcpp::List retval(sentences.size());
+
+    for (int32_t i = 0; i < sentences.size(); i++) {
+        // create a std::istringstream object from sentences[i]
+        std::istringstream iss(sentences[i]);
+        fast_text->getSentenceVector(iss, vec);
+        retval[i] = std::vector<float>(vec.data(), vec.data() + vec.size());
+    }
+
+    return retval;
+}
+
+
+
+// [[Rcpp::export]]
 Rcpp::NumericVector Rft_nearest_neighbors(SEXP ft, const std::string& word, int32_t k = 10) {
     Rcpp::XPtr<FastText>fast_text(ft);
     Rcpp::NumericVector x(k);
-    Rcpp::CharacterVector x_names(k);    
+    Rcpp::CharacterVector x_names(k);
 
     std::vector<std::pair<real, std::string>> knn = fast_text->getNN(word, k);
 
@@ -263,12 +282,12 @@ Rcpp::NumericVector Rft_nearest_neighbors(SEXP ft, const std::string& word, int3
 
 
 // [[Rcpp::export]]
-Rcpp::NumericVector Rft_analogies(SEXP ft, const std::string& wordA, const std::string& wordB, 
+Rcpp::NumericVector Rft_analogies(SEXP ft, const std::string& wordA, const std::string& wordB,
                                   const std::string& wordC, int32_t k = 10) {
     Rcpp::XPtr<FastText>fast_text(ft);
     Rcpp::NumericVector x(k);
     Rcpp::CharacterVector x_names(k);
-    
+
     std::vector<std::pair<real, std::string>> analogies;
     analogies = fast_text->getAnalogies(k, wordA, wordB, wordC);
 

@@ -39,7 +39,7 @@ ft_control(
 )
 }
 \arguments{
-\item{loss}{a character string giving the name of the loss function 
+\item{loss}{a character string giving the name of the loss function
 allowed values are \code{'softmax'}, \code{'hs'} and \code{'ns'}.}
 
 \item{learning_rate}{a numeric giving the learning rate, the default value is \code{0.05}.}
@@ -75,11 +75,11 @@ means the learning rate is updated every 100 tokens.}
 \item{label}{a character string specifying the label prefix (default is \code{'__label__'}).}
 
 \item{verbose}{an integer giving the verbosity level, the default value
-is \code{0L} and shouldn't be changed since Rcpp::Rcout 
+is \code{0L} and shouldn't be changed since Rcpp::Rcout
 cann't handle the traffic.}
 
 \item{pretrained_vectors}{a character string giving the file path
-to the pretrained word vectors which are used 
+to the pretrained word vectors which are used
 for the supervised learning.}
 
 \item{output}{a character string giving the output file path.}
