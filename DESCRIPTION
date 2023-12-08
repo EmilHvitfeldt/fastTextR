@@ -1,7 +1,7 @@
 Package: fastTextR
 Type: Package
 Title: An Interface to the 'fastText' Library
-Version: 2.0.1.9000
+Version: 2.1.0
 Authors@R: 
     c(person("Florian", "Schwendinger", role = "aut"),
       person(given = "Emil",
