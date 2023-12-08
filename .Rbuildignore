@@ -4,3 +4,4 @@ auxiliary
 ^.*\.Rproj$
 ^\.Rproj\.user$
 ^cran-comments\.md$
+^revdep$
