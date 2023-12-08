@@ -1,6 +1,6 @@
 ## Release Summary
 
-Fixed Wbitwise-instead-of-logical issue.
+Added `ft_sentence_vectors()` function.
 
 ## R CMD check results
 
