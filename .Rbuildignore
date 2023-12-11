@@ -5,3 +5,4 @@ auxiliary
 ^\.Rproj\.user$
 ^cran-comments\.md$
 ^revdep$
+^CRAN-SUBMISSION$
