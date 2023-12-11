@@ -1,3 +1,5 @@
+# fastTextR (development version)
+
 # fastTextR 2.1.0
 
 # fastTextR 2.0.1
