@@ -1,6 +1,6 @@
 ## Release Summary
 
-Added `ft_sentence_vectors()` function.
+Fixed C++20 deprecation warnings for implicit `this` capture in lambda expressions.                                   
 
 ## R CMD check results
 
